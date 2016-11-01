@@ -38,7 +38,10 @@ inTrain = createDataPartition(pmltrain$classe, p=0.7, list=FALSE)
 training = pmltrain[inTrain,]
 testing = pmltrain[-inTrain,]
 
-modFit = train(classe ~ ., data=training, method="rf")
+fitControl <- trainControl(method = "cv", #cross validation
+                           number = 100 # fold cross-validation
+)
+modFit = train(classe ~ ., data=training, method="rf", trainControl=fitControl)
 
 pred = predict(modFit,newdata = testing)
 

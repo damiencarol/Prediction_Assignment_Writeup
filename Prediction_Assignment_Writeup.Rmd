@@ -5,6 +5,8 @@ date: "October 31, 2016"
 output: html_document
 ---
 
+# Peer-graded Assignment: Prediction Assignment Writeup
+
 The goal of this project is to predict the manner in which people did the exercise. Is it good or not?
 
 The data for this project come from this source: http://groupware.les.inf.puc-rio.br/har.
@@ -62,7 +64,7 @@ pmltrain <- pmltrain[,-grep("kurtosis_roll_forearm|kurtosis_picth_forearm|kurtos
 ```
 At this point we have a good entry point for machine learning part.
 
-### Machine learning part
+## Machine learning part
 
 First we initialize our library.
 
@@ -132,7 +134,7 @@ Balanced Accuracy      0.9986   0.9930   0.9959   0.9917   0.9953
 ```
 We have accuracy > 99.2%, that enought to answer the quiz
 
-# Validation
+## Validation
 
 Now we want to prepare data for validation. We will just load the validation data and apply the same model.
 
